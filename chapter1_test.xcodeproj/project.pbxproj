@@ -47,6 +47,12 @@
 		C674A5031CFC314200D58C8D /* chapter1_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chapter1_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C674A5071CFC314200D58C8D /* chapter1_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1_testUITests.swift; sourceTree = "<group>"; };
 		C674A5091CFC314200D58C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C674A5151CFC316000D58C8D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		C674A5161CFEC93000D58C8D /* MyPlayground_chapter1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_chapter1.playground; sourceTree = "<group>"; };
+		C674A5171CFFDC1E00D58C8D /* MyPlayground_BasicOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_BasicOperators.playground; sourceTree = "<group>"; };
+		C674A5181D00014E00D58C8D /* MyPlayground_StringsAndCharacters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_StringsAndCharacters.playground; sourceTree = "<group>"; };
+		C674A5191D000DD000D58C8D /* MyPlayground_CollectionTypes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_CollectionTypes.playground; sourceTree = "<group>"; };
+		C674A51A1D00255600D58C8D /* MyPlayground_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_ControlFlow.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,12 @@
 				C674A4EE1CFC314200D58C8D /* Assets.xcassets */,
 				C674A4F01CFC314200D58C8D /* LaunchScreen.storyboard */,
 				C674A4F31CFC314200D58C8D /* Info.plist */,
+				C674A5151CFC316000D58C8D /* MyPlayground.playground */,
+				C674A5161CFEC93000D58C8D /* MyPlayground_chapter1.playground */,
+				C674A5171CFFDC1E00D58C8D /* MyPlayground_BasicOperators.playground */,
+				C674A5181D00014E00D58C8D /* MyPlayground_StringsAndCharacters.playground */,
+				C674A5191D000DD000D58C8D /* MyPlayground_CollectionTypes.playground */,
+				C674A51A1D00255600D58C8D /* MyPlayground_ControlFlow.playground */,
 			);
 			path = chapter1_test;
 			sourceTree = "<group>";
