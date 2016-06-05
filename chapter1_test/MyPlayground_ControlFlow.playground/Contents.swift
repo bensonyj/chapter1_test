@@ -89,4 +89,68 @@ default:
 }
 print("There are \(naturalCount)\(naturalCount).")
 
-        
+//控制转移语句（Control Transfer Statements）
+
+//贯穿（Fallthrough）
+let integerToDescription = 5
+var description = "The number \(integerToDescription) is"
+switch integerToDescription{
+case 2,3,5,7,11,13,17,19:
+    description += " a prime number, and als0"
+    fallthrough
+case 1,4,8:
+    description += "ts"
+default:
+    description += " an integer"
+}
+print(description)
+
+//带标签的语句
+square = 0
+diceRoll = 0
+
+
+gameLoop: while square != finalSquare {
+    diceRoll += 1
+    if diceRoll == 7 {
+        diceRoll = 1
+    }
+    
+    switch square + diceRoll {
+    case finalSquare:
+        //到达最后一个方块，游戏结束
+        break gameLoop
+    case let newSquare where newSquare > finalSquare:
+        //超出最后一个方块，再掷一次骰子
+        continue gameLoop
+    default:
+        //本次移动有效
+        square += diceRoll
+        square += board[square]
+    }
+}
+
+//提前退出
+func greet(person:[String:String]){
+    guard let name = person["name"] else{
+        return
+    }
+    print("Hello \(name)")
+    
+    guard let location = person["location"] else{
+        print("I hope the weather is nice near you.")
+        return
+    }
+    print("I hope the weather is nice in \(location).")
+}
+greet(["name":"John"])
+greet(["name":"Jane","location":"Cupertino"])
+
+//检测 API 可用性
+//if #available(`platform name` `version`, `...`, *) {
+//    `statements to execute if the APIs are available`
+//} else {
+//    `fallback statements to execute if the APIs are unavailable`
+//}
+
+
