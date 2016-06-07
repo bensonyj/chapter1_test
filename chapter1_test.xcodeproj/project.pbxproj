@@ -53,6 +53,9 @@
 		C674A5181D00014E00D58C8D /* MyPlayground_StringsAndCharacters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_StringsAndCharacters.playground; sourceTree = "<group>"; };
 		C674A5191D000DD000D58C8D /* MyPlayground_CollectionTypes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_CollectionTypes.playground; sourceTree = "<group>"; };
 		C674A51A1D00255600D58C8D /* MyPlayground_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_ControlFlow.playground; sourceTree = "<group>"; };
+		C674A55B1D0510BA00D58C8D /* MyPlayground_Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Functions.playground; sourceTree = "<group>"; };
+		C674A55C1D05248400D58C8D /* MyPlayground_Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Closures.playground; sourceTree = "<group>"; };
+		C674A55E1D06964400D58C8D /* MyPlayground_Enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Enumerations.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,9 @@
 				C674A5181D00014E00D58C8D /* MyPlayground_StringsAndCharacters.playground */,
 				C674A5191D000DD000D58C8D /* MyPlayground_CollectionTypes.playground */,
 				C674A51A1D00255600D58C8D /* MyPlayground_ControlFlow.playground */,
+				C674A55B1D0510BA00D58C8D /* MyPlayground_Functions.playground */,
+				C674A55C1D05248400D58C8D /* MyPlayground_Closures.playground */,
+				C674A55E1D06964400D58C8D /* MyPlayground_Enumerations.playground */,
 			);
 			path = chapter1_test;
 			sourceTree = "<group>";
