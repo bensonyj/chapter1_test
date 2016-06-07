@@ -56,6 +56,9 @@
 		C674A55B1D0510BA00D58C8D /* MyPlayground_Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Functions.playground; sourceTree = "<group>"; };
 		C674A55C1D05248400D58C8D /* MyPlayground_Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Closures.playground; sourceTree = "<group>"; };
 		C674A55E1D06964400D58C8D /* MyPlayground_Enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Enumerations.playground; sourceTree = "<group>"; };
+		C674A55F1D06A20700D58C8D /* MyPlayground_ClassesAndStructures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_ClassesAndStructures.playground; sourceTree = "<group>"; };
+		C674A5601D06B19300D58C8D /* MyPlayground_Properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Properties.playground; sourceTree = "<group>"; };
+		C674A5611D06C60200D58C8D /* MyPlayground_Methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Methods.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,9 @@
 				C674A55B1D0510BA00D58C8D /* MyPlayground_Functions.playground */,
 				C674A55C1D05248400D58C8D /* MyPlayground_Closures.playground */,
 				C674A55E1D06964400D58C8D /* MyPlayground_Enumerations.playground */,
+				C674A55F1D06A20700D58C8D /* MyPlayground_ClassesAndStructures.playground */,
+				C674A5601D06B19300D58C8D /* MyPlayground_Properties.playground */,
+				C674A5611D06C60200D58C8D /* MyPlayground_Methods.playground */,
 			);
 			path = chapter1_test;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				C674A50E1CFC314200D58C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C674A50F1CFC314200D58C8D /* Build configuration list for PBXNativeTarget "chapter1_testTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				C674A5111CFC314200D58C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C674A5121CFC314200D58C8D /* Build configuration list for PBXNativeTarget "chapter1_testUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				C674A5141CFC314200D58C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
