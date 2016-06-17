@@ -36,6 +36,9 @@
 /* Begin PBXFileReference section */
 		C6081AD41D07B79B0000D4B8 /* MyPlayground_Subscripts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Subscripts.playground; sourceTree = "<group>"; };
 		C6081AD51D07B7B90000D4B8 /* MyPlayground_Inheritance.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Inheritance.playground; sourceTree = "<group>"; };
+		C6413F9D1D12753100708477 /* MyPlayground_Initialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Initialization.playground; sourceTree = "<group>"; };
+		C6413F9F1D13D08500708477 /* MyPlayground_Deinitialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Deinitialization.playground; sourceTree = "<group>"; };
+		C6413FA01D13D70200708477 /* MyPlayground_AutomaticReferenceCounting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_AutomaticReferenceCounting.playground; sourceTree = "<group>"; };
 		C674A4E41CFC314200D58C8D /* chapter1_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chapter1_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C674A4E71CFC314200D58C8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C674A4E91CFC314200D58C8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +134,9 @@
 				C674A5611D06C60200D58C8D /* MyPlayground_Methods.playground */,
 				C6081AD41D07B79B0000D4B8 /* MyPlayground_Subscripts.playground */,
 				C6081AD51D07B7B90000D4B8 /* MyPlayground_Inheritance.playground */,
+				C6413F9D1D12753100708477 /* MyPlayground_Initialization.playground */,
+				C6413F9F1D13D08500708477 /* MyPlayground_Deinitialization.playground */,
+				C6413FA01D13D70200708477 /* MyPlayground_AutomaticReferenceCounting.playground */,
 			);
 			path = chapter1_test;
 			sourceTree = "<group>";
