@@ -40,6 +40,10 @@
 		C6413F9F1D13D08500708477 /* MyPlayground_Deinitialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Deinitialization.playground; sourceTree = "<group>"; };
 		C6413FA01D13D70200708477 /* MyPlayground_AutomaticReferenceCounting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_AutomaticReferenceCounting.playground; sourceTree = "<group>"; };
 		C6413FA11D13EA8800708477 /* MyPlayground_OptionalChaining.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_OptionalChaining.playground; sourceTree = "<group>"; };
+		C6413FA21D1782C200708477 /* MyPlayground_Protocols.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Protocols.playground; sourceTree = "<group>"; };
+		C6413FA31D1782D300708477 /* MyPlayground_Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_Generics.playground; sourceTree = "<group>"; };
+		C6413FA41D1782E600708477 /* MyPlayground_AccessControl.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_AccessControl.playground; sourceTree = "<group>"; };
+		C6413FA51D1782F500708477 /* MyPlayground_AdvancedOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_AdvancedOperators.playground; sourceTree = "<group>"; };
 		C671D2EE1D163068007DD91C /* MyPlayground_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_ErrorHandling.playground; sourceTree = "<group>"; };
 		C671D2EF1D163F70007DD91C /* MyPlayground_TypeCasting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground_TypeCasting.playground; sourceTree = "<group>"; };
 		C671D2F01D166A8D007DD91C /* MyPlayground_NestedTypes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground_NestedTypes.playground; path = ../MyPlayground_NestedTypes.playground; sourceTree = "<group>"; };
@@ -147,6 +151,10 @@
 				C671D2EE1D163068007DD91C /* MyPlayground_ErrorHandling.playground */,
 				C671D2EF1D163F70007DD91C /* MyPlayground_TypeCasting.playground */,
 				C671D2F11D166ACA007DD91C /* MyPlayground_Extensions.playground */,
+				C6413FA21D1782C200708477 /* MyPlayground_Protocols.playground */,
+				C6413FA31D1782D300708477 /* MyPlayground_Generics.playground */,
+				C6413FA41D1782E600708477 /* MyPlayground_AccessControl.playground */,
+				C6413FA51D1782F500708477 /* MyPlayground_AdvancedOperators.playground */,
 			);
 			path = chapter1_test;
 			sourceTree = "<group>";
