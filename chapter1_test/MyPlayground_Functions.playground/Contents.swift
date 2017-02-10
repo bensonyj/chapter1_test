@@ -10,8 +10,8 @@ func sayHello(personName: String) -> String {
     return greeting
 }
 
-print(sayHello("Anna"))
-print(sayHello("Brian"))
+print(sayHello(personName: "Anna"))
+print(sayHello(personName: "Brian"))
 
 func sayHelloAgain(personName:String) -> String {
     return "Hell0, " + personName + "!"
@@ -26,20 +26,20 @@ func sayHelloWord() -> String {
 //多参数函数 (Functions With Multiple Parameters)
 func sayHello(personName:String,alreadyGreeted:Bool) -> String {
     if alreadyGreeted {
-        return sayHelloAgain(personName)
+        return sayHelloAgain(personName: personName)
     }else{
-        return sayHello(personName)
+        return sayHello(personName: personName)
     }
 }
 
-print(sayHello("Tim", alreadyGreeted: true))
+print(sayHello(personName: "Tim", alreadyGreeted: true))
 
 //无返回值函数（Functions Without Return Values）
 func syaGoodbye(personName:String) {
     print("Goodbye, \(personName)!")
 }
 
-syaGoodbye("Dave")
+syaGoodbye(personName: "Dave")
 
 //多重返回值函数（Functions with Multiple Return Values）
 func minMax(array:[Int]) -> (min:Int,max: Int) {
@@ -56,7 +56,7 @@ func minMax(array:[Int]) -> (min:Int,max: Int) {
     
     return (currentMin,currentMax)
 }
-let bounds = minMax([8,-6,2,109,3,71])
+let bounds = minMax(array: [8,-6,2,109,3,71])
 print("min is \(bounds.min) and max is \(bounds.max)")
 
 //可选元组返回类型(Optional Tuple Return Types)
@@ -78,7 +78,7 @@ func minMax2(array:[Int]) -> (min:Int,max: Int)? {
     
     return (currentMin,currentMax)
 }
-if let bounds2 = minMax2([8,-6,2,109,3,71]) {
+if let bounds2 = minMax2(array: [8,-6,2,109,3,71]) {
     print("min is \(bounds2.min) and max is \(bounds2.max)")
 }
 
@@ -88,7 +88,7 @@ func someFunction(firstParameterName: Int, secondParameterName: Int) {
     // firstParameterName and secondParameterName refer to
     // the argument values for the first and second parameters
 }
-someFunction(1, secondParameterName: 2)
+someFunction(firstParameterName: 1, secondParameterName: 2)
 
 //指定外部参数名（Specifying External Parameter Names）
 func sayHello(x person: String, anotherPerson: String) -> String {
@@ -102,7 +102,7 @@ func someFunction(firstParameterName: Int, _ secondParameterName: Int) {
     // firstParameterName and secondParameterName refer to
     // the argument values for the first and second parameters
 }
-someFunction(1, 2)
+someFunction(firstParameterName: 1, 2)
 
 //默认参数值（Default Parameter Values）
 func someFunction(parameterWithDefault: Int = 12) {
@@ -111,7 +111,7 @@ func someFunction(parameterWithDefault: Int = 12) {
     // value of parameterWithDefault is 12
     print("parameterWithDefault is \(parameterWithDefault)")
 }
-someFunction(6) // parameterWithDefault is 6
+someFunction(parameterWithDefault: 6) // parameterWithDefault is 6
 someFunction() // parameterWithDefault is 12
 
 //可变参数（Variadic Parameters）
@@ -123,11 +123,11 @@ func arithmeticMean(numbers: Double...) -> Double {
     
     return total / Double(numbers.count)
 }
-arithmeticMean(1,2,3,4,5)
-arithmeticMean(3,8.25,18.75)
+arithmeticMean(numbers: 1,2,3,4,5)
+arithmeticMean(numbers: 3,8.25,18.75)
 
 //输入输出参数（In-Out Parameters）
-func swapTwoInts(inout a: Int,inout _ b:Int) {
+func swapTwoInts(_ a: inout Int, _ b:inout Int) {
     let  temporaryA = a
     a = b
     b = temporaryA
@@ -166,7 +166,7 @@ let anotherMathFunction = addTwoInts
 func printMathResult(mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
     print("Result: \(mathFunction(a,b))")
 }
-printMathResult(addTwoInts, 3, 5)
+printMathResult(mathFunction: addTwoInts, 3, 5)
 
 //函数类型作为返回类型（Function Types as Return Types）
 func stepForward(input: Int) -> Int {
@@ -177,7 +177,7 @@ func stepBackward(input: Int) -> Int {
     return input - 1
 }
 
-func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+func chooseStepFunction(_ backwards: Bool) -> (Int) -> Int {
     return backwards ? stepBackward : stepForward
 }
 
@@ -191,7 +191,7 @@ while currentValue != 0 {
 print("zero!")
 
 //嵌套函数（Nested Functions）
-func chooseStepFunction2(backwards: Bool) -> (Int) -> Int {
+func chooseStepFunction2(_ backwards: Bool) -> (Int) -> Int {
     func stepForward2(input: Int) -> Int {
         return input + 1
     }

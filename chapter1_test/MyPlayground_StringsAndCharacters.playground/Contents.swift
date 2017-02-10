@@ -25,8 +25,12 @@ let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
 let greeting = "Guten Tag!"
 greeting.startIndex
 greeting[greeting.startIndex]
-greeting[greeting.endIndex.predecessor()]
-let index = greeting.startIndex.advancedBy(Int("7")!)
+//greeting[greeting.endIndex.predecessor()]
+//let index = greeting.startIndex.advancedBy(Int("7")!)
+//greeting[index]
+greeting[greeting.index(before: greeting.endIndex)]
+greeting[greeting.index(after: greeting.startIndex)]
+let index = greeting.index(greeting.startIndex, offsetBy: 7)
 greeting[index]
 
 for index in greeting.characters.indices{
@@ -34,12 +38,17 @@ for index in greeting.characters.indices{
 }
 
 var welcome = "hello"
-welcome.insert("!", atIndex: welcome.endIndex)
+//welcome.insert("!", atIndex: welcome.endIndex)
+welcome.insert("!", at: welcome.endIndex)
 
-welcome.insertContentsOf(" there".characters, at: welcome.endIndex.predecessor())
+//welcome.insertContentsOf(" there".characters, at: welcome.endIndex.predecessor())
+welcome.insert(contentsOf: " there".characters, at: welcome.index(before: welcome.endIndex))
 
-welcome.removeAtIndex(welcome.endIndex.predecessor())
-welcome.removeRange(welcome.endIndex.advancedBy(-6)..<welcome.endIndex)
+//welcome.removeAtIndex(welcome.endIndex.predecessor())
+//welcome.removeRange(welcome.endIndex.advancedBy(-6)..<welcome.endIndex)
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+welcome.removeSubrange(range)
 
 let romeoAndJuliet = [
     "Act 1 Scene 1: Verona, A public place",

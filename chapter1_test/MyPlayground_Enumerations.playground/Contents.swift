@@ -111,7 +111,7 @@ let four = ArithmeticExptression.Number(4)
 let sum = ArithmeticExptression.Addition(five, four)
 let product = ArithmeticExptression.Multiplication(sum, ArithmeticExptression.Number(2))
 
-func evaluate(expression: ArithmeticExptression) -> Int {
+func evaluate(_ expression: ArithmeticExptression) -> Int {
     switch expression {
     case .Number(let value):
         return value

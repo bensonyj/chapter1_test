@@ -57,8 +57,8 @@ if var actualNumber = convertedNumber{
     print("\'\(possibleNumber)' has an integer value of \(actualNumber)")
 }
 
-if let firstNumber = Int("4"),secondNumber = Int("42") where firstNumber < secondNumber{
-    print("\(firstNumber) < \(secondNumber)")
+if let firstNumber = Int("4"),let secondNumber = Int("42") , firstNumber < secondNumber && secondNumber < 100{
+    print("\(firstNumber) < \(secondNumber) < 100")
 }
 
 //隐式解析可选类型

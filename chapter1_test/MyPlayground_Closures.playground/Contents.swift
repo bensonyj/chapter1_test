@@ -11,28 +11,28 @@ let names = ["Chirs","Alex","Ewa","Barry","Daniella"]
 func backwards(s1: String,s2: String) -> Bool {
     return s1 > s2
 }
-var reversed = names.sort(backwards)
+var reversed = names.sorted(by: backwards)
 
     //闭包表达式语法（Closure Expression Syntax）
     //{ (parameters) -> returnType in
     //    statements
     //}
-reversed = names.sort({
+reversed = names.sorted(by: {
     (s1:String,s2: String) -> Bool in
     return s1 > s2
 })
 
     //根据上下文推断类型（Inferring Type From Context）
-reversed = names.sort({s1, s2 in return s1 > s2})
+reversed = names.sorted(by:{s1, s2 in return s1 > s2})
 
     //单表达式闭包隐式返回（Implicit Return From Single-Expression Clossures）
-reversed = names.sort({ s1, s2 in s1 > s2})
+reversed = names.sorted(by:{ s1, s2 in s1 > s2})
 
     //参数名称缩写（Shorthand Argument Names）
-reversed = names.sort({$0 > $1})
+reversed = names.sorted(by:{$0 > $1})
 
     //运算符函数（Operator Functions）
-reversed = names.sort(>)
+reversed = names.sorted(by:>)
 
 
 //尾随闭包（Trailing Closures）
@@ -49,8 +49,8 @@ reversed = names.sort(>)
     //someFunctionThatTakesAClosure() {
     //    // 闭包主体部分
     //}
-reversed = names.sort(){ $0 > $1}
-reversed = names.sort { $0 > $1}
+reversed = names.sorted(){ $0 > $1}
+reversed = names.sorted { $0 > $1}
 
 let digitNames = [0:"Zero",1:"One",2: "Two",3: "Three",4: "Four",5: "Five",6: "Six",7: "Seven",8: "Eight",9: "Nine"]
 let numbers = [16,58,510]
@@ -95,20 +95,21 @@ alsoIncrementByTen()
 
 
 //非逃逸闭包(Nonescaping Closures)
-func someFunctionWithNoescapeClosure(@noescape closure:() -> Void) {
-    closure()
-}
 
 var completionHandlers: [() -> Void] = []
-func someFunctionWithEscapingClosure(completionHandler:()-> Void) {
+func someFunctionWithEscapingClosure(completionHandler:@escaping ()-> Void) {
     completionHandlers.append(completionHandler)
+}
+
+func someFunctionWithNonescapingClosure(closure:() -> Void){
+    closure()
 }
 
 class SomeClass {
     var x = 10
     func doSomething() {
         someFunctionWithEscapingClosure () {self.x = 100}
-        someFunctionWithNoescapeClosure {x = 200}
+        someFunctionWithNonescapingClosure {x = 200}
     }
 }
 
@@ -123,29 +124,29 @@ print(instance.x)
 var customersInLine = ["Chris","Alex","Ewa","Barry","Daniella"]
 print(customersInLine.count)
 
-let customerProvider = { customersInLine.removeAtIndex(0) }
+let customerProvider = { customersInLine.remove(at: 0) }
 print(customersInLine.count)
 
 print("Now serving \(customerProvider())!")
 print(customersInLine.count)
 
-func serveCustomer(customerProvider2:() -> String)  {
+func serveCustomer(_ customerProvider2:() -> String)  {
     print("Now serving \(customerProvider2())")
 }
-serveCustomer({customersInLine.removeAtIndex(0)})
+serveCustomer({customersInLine.remove(at: 0)})
 
-func serveCustomer3(@autoclosure customerProvider3: () -> String){
+func serveCustomer3(_ customerProvider3: @autoclosure () -> String){
     print("Now serving \(customerProvider3())!")
 }
-serveCustomer3(customersInLine.removeAtIndex(0))
+serveCustomer3(customersInLine.remove(at: 0))
 
 
 var customerProviders:[() -> String] = []
-func collectCustomerProviders(@autoclosure(escaping) customerProvider4: () -> String) {
+func collectCustomerProviders(_ customerProvider4: @autoclosure @escaping () -> String) {
     customerProviders.append(customerProvider4)
 }
-collectCustomerProviders(customersInLine.removeAtIndex(0))
-collectCustomerProviders(customersInLine.removeAtIndex(0))
+collectCustomerProviders(customersInLine.remove(at: 0))
+collectCustomerProviders(customersInLine.remove(at: 0))
 
 print("Collected \(customerProviders.count) closures.")
 for customerProvider5 in customerProviders {

@@ -11,7 +11,7 @@ for (animalName,legCount) in numberOfLegs{
 
 
 let finalSquare = 25
-var board = [Int](count:finalSquare+1,repeatedValue:0)
+var board = [Int](repeating: 0, count: finalSquare + 1)
 board[03] = +08
 board[06] = +11
 board[09] = +09
@@ -143,8 +143,8 @@ func greet(person:[String:String]){
     }
     print("I hope the weather is nice in \(location).")
 }
-greet(["name":"John"])
-greet(["name":"Jane","location":"Cupertino"])
+greet(person: ["name":"John"])
+greet(person: ["name":"Jane","location":"Cupertino"])
 
 //检测 API 可用性
 //if #available(`platform name` `version`, `...`, *) {

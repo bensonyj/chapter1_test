@@ -7,6 +7,9 @@ var a = 2
 a += 2
 let b = a * 2
 
+let c = 9 % -4
+
+
 (1,"zebra") < (2,"apple")
 (3,"apple",1) > (3,"bird",4)
 
