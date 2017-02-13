@@ -15,12 +15,12 @@ import Cocoa
 //析构器实践
 class Bank {
     static var coinsInBank = 10_000
-    static func vendCoins(numberOfCoinsRequested: Int) -> Int {
+    static func vendCoins(_ numberOfCoinsRequested: Int) -> Int {
         let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)
         coinsInBank -= numberOfCoinsToVend
         return numberOfCoinsToVend
     }
-    static func receiveCoins(coins: Int) {
+    static func receiveCoins(_ coins: Int) {
         coinsInBank += coins
     }
 }
@@ -30,7 +30,7 @@ class Player {
     init(coins: Int) {
         coinsInPurse = Bank.vendCoins(coins)
     }
-    func winCoins(coins:Int) {
+    func winCoins(_ coins:Int) {
         coinsInPurse += Bank.vendCoins(coins)
     }
     deinit {

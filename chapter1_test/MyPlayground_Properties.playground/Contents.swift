@@ -150,6 +150,31 @@ class SomeClass {
     class var overrideableComputedTypeProperty: Int {
         return 107
     }
+    
+    class var oo: Int {
+        get {
+            return 4
+        }
+        
+        set {
+            
+        }
+    }
+}
+
+class SomeSunClass: SomeClass {
+    var oo: Int {
+        get {
+            return 4
+        }
+        
+        set {
+
+        }
+    }
+    
+    var overrideableComputedTypeProperty = 110
+    
 }
 
     //获取和设置类型属性的值

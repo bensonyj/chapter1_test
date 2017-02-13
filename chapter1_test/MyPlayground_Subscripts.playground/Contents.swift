@@ -35,7 +35,7 @@ struct Matrix {
     init(rows: Int, columns: Int) {
         self.rows = rows
         self.colums = columns
-        grid = Array(count: rows * columns, repeatedValue: 0.0)
+        grid = Array(repeating: 0.0, count: rows * columns)
     }
     
     func indexIsValidForRow(row: Int, column: Int) -> Bool {
@@ -44,11 +44,11 @@ struct Matrix {
     
     subscript(row: Int, column: Int) -> Double {
         get {
-            assert(indexIsValidForRow(row, column: column),"index out of range")
+            assert(indexIsValidForRow(row: row, column: column),"index out of range")
             return grid[(row * colums) + column]
         }
         set {
-            assert(indexIsValidForRow(row, column: column),"index out of range")
+            assert(indexIsValidForRow(row: row, column: column),"index out of range")
             grid[(row * colums) + column] = newValue
         }
     }

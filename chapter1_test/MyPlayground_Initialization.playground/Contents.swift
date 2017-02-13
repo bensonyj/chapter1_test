@@ -105,7 +105,7 @@ struct Size {
     var width = 0.0, height = 0.0
 }
 let twoByTwo = Size(width: 2.0, height: 2.0)
-
+let twoByRwo2 = Size()
 
 //值类型的构造器代理
 struct Point {
@@ -218,8 +218,12 @@ class RecipeIngredient: Food {
     }
 }
 let oneMysteryItem = RecipeIngredient()
+print(oneMysteryItem.name)
 let oneBacon = RecipeIngredient(name: "Bacon")
+print(oneBacon.name)
 let sixEggs = RecipeIngredient(name: "Eggs", quantity: 6)
+print(sixEggs.name)
+
 
 class ShoppingListItem2: RecipeIngredient {
     var purchased = false
@@ -284,6 +288,7 @@ if unknownUnit == nil {
     print("This is not a defined temperature unit, so initialization failed.")
 }
 
+
     //带原始值的枚举类型的可失败构造器
 enum TemperatureUnit2: Character {
     case Kelvin = "K", Celsius = "C", Fahrenheit = "F"
@@ -331,6 +336,7 @@ if let oneUnnamed = CartItem(name: "", quantity: 1) {
 } else {
     print("Unable to initialize one unnamed product")
 }
+
 
     //重写一个可失败构造器
 class Document {
@@ -406,7 +412,7 @@ struct Checkerboard {
     }
 }
 let board = Checkerboard()
-print(board.squareIsBlackAtRow(0, column: 1))
-print(board.squareIsBlackAtRow(7, column: 7))
+print(board.squareIsBlackAtRow(row: 0, column: 1))
+print(board.squareIsBlackAtRow(row: 7, column: 7))
 
 
