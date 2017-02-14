@@ -131,7 +131,7 @@ class HTMLElement {
     let name: String
     let text: String?
     
-    lazy var asHTML:Void -> String = {
+    lazy var asHTML:(Void) -> String = {
         if let text = self.text {
             return "<\(self.name)>\(text)</\(self.name)>"
         }else{
@@ -179,7 +179,7 @@ class HTMLElement2 {
     let name: String
     let text: String?
     
-    lazy var asHTML: Void -> String = {
+    lazy var asHTML: (Void) -> String = {
         [unowned self] in
         if let text = self.text {
             return "<\(self.name)>\(text)</\(self.name)>"

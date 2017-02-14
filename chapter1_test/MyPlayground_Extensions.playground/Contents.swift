@@ -76,7 +76,7 @@ extension Int {
     }
 }
 
-3.repetitions({
+3.repetitions(task: {
     print("Hello!")
 })
 
@@ -139,4 +139,4 @@ func printIntergerKinds(numbers: [Int]) {
     }
 }
 
-printIntergerKinds([3,19,-27,0,-6,0,7])
+printIntergerKinds(numbers: [3,19,-27,0,-6,0,7])

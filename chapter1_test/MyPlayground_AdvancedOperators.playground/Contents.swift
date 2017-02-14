@@ -51,8 +51,10 @@ struct Vector2D {
     var x = 0.0, y = 0.0
 }
 
-func +(left: Vector2D, right: Vector2D) -> Vector2D {
-    return Vector2D(x: left.x + right.x, y: left.y + right.y)
+extension Vector2D {
+    static func + (left: Vector2D, right: Vector2D) -> Vector2D {
+        return Vector2D(x: left.x + right.x, y: left.y + right.y)
+    }
 }
 
 let vector = Vector2D(x: 3.0, y: 1.0)
@@ -62,8 +64,10 @@ print(combinedVector.x)
 let vectorTest = 10 + 11
 
     //前缀和后缀运算符:要实现前缀或者后缀运算符，需要在声明运算符函数的时候在 func 关键字之前指定 prefix 或者 postfix 修饰符
-prefix func - (vector: Vector2D) -> Vector2D {
-    return Vector2D(x: -vector.x, y: -vector.y)
+extension Vector2D {
+    static prefix func - (vector: Vector2D) -> Vector2D {
+        return Vector2D(x: -vector.x, y: -vector.y)
+    }
 }
 
 let positive = Vector2D(x: 3.0, y: 4.0)
@@ -73,9 +77,12 @@ let alsoPositive = -negative
 print(alsoPositive.x)
 
     //复合赋值运算符
-func += (inout left: Vector2D, right: Vector2D) {
-    left = left + right
+extension Vector2D {
+    static func += (left: inout Vector2D, right: Vector2D) {
+        left = left + right
+    }
 }
+
 var original = Vector2D(x: 1.0, y: 2.0)
 let vectorToAdd = Vector2D(x: 2.0, y: 4.0)
 original += vectorToAdd
@@ -96,10 +103,12 @@ if twoThree == anotherTwoThree {
 }
 
 //自定义运算符:新的运算符要使用 operator 关键字在全局作用域内进行定义，同时还要指定 prefix、infix 或者 postfix 修饰符
-prefix operator +++ {}
-prefix func +++ (inout vector: Vector2D) -> Vector2D {
-    vector += vector
-    return vector
+prefix operator +++
+extension Vector2D {
+    static prefix func +++ (vector: inout Vector2D) -> Vector2D {
+        vector += vector
+        return vector
+    }
 }
 
 var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
@@ -108,7 +117,7 @@ print(toBeDoubled.x)
 print(afterDoubled.x)
 
     //自定义中缀运算符的优先级和结合性
-infix operator +- { associativity left precedence 140}
+infix operator +-: AdditionPrecedence
 func +- (left: Vector2D, right: Vector2D) -> Vector2D {
     return Vector2D(x: left.x + right.x, y: left.y - right.y)
 }

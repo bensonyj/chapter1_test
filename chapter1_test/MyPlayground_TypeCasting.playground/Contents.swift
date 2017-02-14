@@ -95,8 +95,8 @@ things.append(0.0)
 things.append(42)
 things.append(3.14159)
 things.append("hell0")
-//let group = (3.0,5.0)
-//things.append(group)
+let group = (3.0,5.0)
+things.append(group)
 things.append(Movie(name: "Ghostbusters", director: "Ivan Ritman"))
 things.append({ (name: String) -> String in "Hello,\(name)" })
 
@@ -118,7 +118,7 @@ for thing in things {
         print("an (x, y) point at \(x), \(y)")
     case let movie as Movie:
         print("a movie called '\(movie.name)', dir. \(movie.director)")
-    case let stringConverter as String -> String:
+    case let stringConverter as (String) -> String:
         print(stringConverter("Michael"))
     default:
         print("something else")

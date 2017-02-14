@@ -6,7 +6,7 @@ import UIKit
 
 //表示并抛出错误
     //在 Swift 中，错误用符合ErrorType协议的类型的值来表示。这个空协议表明该类型可以用于错误处理。
-enum VendingMachineError: ErrorType {
+enum VendingMachineError: Error {
     case InvalidSelection                       //选择无效
     case InsufficientFunds(coinsNeeded: Int)    //金额不足
     case OutOfStock                             //缺货
@@ -52,7 +52,7 @@ class VendingMachine {
         newItem.count -= 1
         inventory[name] = newItem
         
-        dispenseSnack(name)
+        dispenseSnack(snack: name)
     }
 }
 
@@ -67,7 +67,7 @@ func buyFavoriteSnack(person: String,vendingMachine: VendingMachine) throws {
 }
 
 let vendingTest = VendingMachine.init()
-try buyFavoriteSnack("Bob", vendingMachine: vendingTest)
+try buyFavoriteSnack(person: "Bob", vendingMachine: vendingTest)
 
 
 
@@ -91,7 +91,7 @@ struct PurchasedSnack {
 var vendingMachine = VendingMachine()
 vendingMachine.coinsDeposited = 8
 do {
-    try buyFavoriteSnack("Alice", vendingMachine: vendingMachine)
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
 } catch VendingMachineError.InvalidSelection {
     print("Invalid selection.")
 } catch VendingMachineError.OutOfStock {
