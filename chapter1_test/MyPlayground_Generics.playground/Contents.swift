@@ -6,7 +6,7 @@ var str = "泛型（Generics）"
 
 //泛型所解决的问题
     //非泛型函数
-func swapTwoInts(inout a: Int,inout _ b:Int) {
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
     b = temporaryA
@@ -17,7 +17,7 @@ swapTwoInts(&someInt, &anotherInt)
 print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 //泛型函数
-func swapTwoValues<T>(inout a: T, inout _ b: T) {
+func swapTwoValues<T>(_ a: inout T,_ b: inout T) {
     let temporary = a
     a = b
     b = temporary
@@ -42,7 +42,7 @@ print("someString is now \(someString), and anotherString is now \(anotherString
 //泛型类型
 struct IntStack {
     var items = [Int]()
-    mutating func push(item: Int) {
+    mutating func push(_ item: Int) {
         items.append(item)
     }
     mutating func pop() -> Int {
@@ -52,7 +52,7 @@ struct IntStack {
 
 struct Stack<Element> {
     var items = [Element]()
-    mutating func push(item: Element) {
+    mutating func push(_ item: Element) {
         items.append(item)
     }
     mutating func pop() -> Element {
@@ -89,8 +89,8 @@ if let topItem = stackOfStrings.topItem {
 //}
 
     //类型约束实践
-func findStringIndex(array: [String], _ valueToFind: String) -> Int? {
-    for (index, value) in array.enumerate() {
+func findStringIndex(_ array: [String], _ valueToFind: String) -> Int? {
+    for (index, value) in array.enumerated() {
         if value == valueToFind {
             return index
         }
@@ -103,8 +103,8 @@ if let foundIndex = findStringIndex(strings, "llama") {
     print("The index of llama is \(foundIndex)")
 }
 
-func findIndex<T: Equatable>(array: [T], _ valueToFind: T) -> Int? {
-    for (index, value) in array.enumerate() {
+func findIndex<T: Equatable>(_ array: [T], _ valueToFind: T) -> Int? {
+    for (index, value) in array.enumerated() {
         if value == valueToFind {
             return index
         }
@@ -120,14 +120,14 @@ let stringIndex = findIndex(["Mike", "Malcolm", "Andrea"], "Andrea")
     //关联类型实践
 protocol Container {
     associatedtype ItemType
-    mutating func append(item: ItemType)
+    mutating func append(_ item: ItemType)
     var count: Int { get }
     subscript(i: Int) -> ItemType { get }
 }
 
 struct IntStack2: Container {
     var items = [Int]()
-    mutating func push(item: Int) {
+    mutating func push(_ item: Int) {
         items.append(item)
     }
     mutating func pop() -> Int {
@@ -135,7 +135,7 @@ struct IntStack2: Container {
     }
     
 //    typealias ItemType = Int
-    mutating func append(item: Int) {
+    mutating func append(_ item: Int) {
         self.push(item)
     }
     var count: Int {
@@ -149,14 +149,14 @@ struct IntStack2: Container {
 struct Stack2<Element>: Container {
     // Stack<Element> 的原始实现部分
     var items = [Element]()
-    mutating func push(item: Element) {
+    mutating func push(_ item: Element) {
         items.append(item)
     }
     mutating func pop() -> Element {
         return items.removeLast()
     }
     // Container 协议的实现部分
-    mutating func append(item: Element) {
+    mutating func append(_ item: Element) {
         self.push(item)
     }
     var count: Int {
@@ -170,7 +170,7 @@ struct Stack2<Element>: Container {
 extension Array: Container {}
 
 //Where 子句
-func allItemsMatch<C1: Container, C2: Container where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>(someContainer: C1, _ anotherContainer: C2) -> Bool {
+func allItemsMatch<C1: Container, C2: Container>(_ someContainer: C1, _ anotherContainer: C2) -> Bool where C1.ItemType == C2.ItemType, C1.ItemType: Equatable {
     if someContainer.count != anotherContainer.count {
         return false
     }

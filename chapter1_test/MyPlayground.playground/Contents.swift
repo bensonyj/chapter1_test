@@ -59,9 +59,9 @@ func greet(name:String,day: String) -> String {
     return "Hello \(name),today is \(day)"
 }
 
-greet("Yingjian", day: "monday")
+greet(name: "Yingjian", day: "monday")
 
-func calculateStatistics(scores:[Int]) -> (min: Int,max: Int,sum:Int) {
+func calculateStatistics(_ scores:[Int]) -> (min: Int,max: Int,sum:Int) {
     var min = scores[0]
     var max = scores[0]
     var sum = 0
@@ -85,7 +85,7 @@ print(statistics.1)
 calculateStatistics([Int()])
 
 
-func sumOf(numbers:Int...) -> Int {
+func sumOf(_ numbers:Int...) -> Int {
     var sum = 0
     for number in numbers {
         sum += number
@@ -110,7 +110,7 @@ func returnFifteen() -> Int {
 
 returnFifteen()
 
-func makeIncrementer() -> (Int -> Int) {
+func makeIncrementer() -> ((Int) -> Int) {
     func addOne(number:Int) -> Int{
         return 1 + number
     }
@@ -121,7 +121,7 @@ func makeIncrementer() -> (Int -> Int) {
 var incrementer = makeIncrementer()
 incrementer(7)
 
-func hasAnyMatches(list:[Int],condition:Int -> Bool) -> Bool {
+func hasAnyMatches(_ list:[Int],condition:((Int) -> Bool)) -> Bool {
     for item in list {
         if condition(item) {
             return true
@@ -131,7 +131,7 @@ func hasAnyMatches(list:[Int],condition:Int -> Bool) -> Bool {
     return false
 }
 
-func lessThanTen(number : Int) -> Bool {
+func lessThanTen(_ number : Int) -> Bool {
     return number < 10
 }
 
@@ -261,7 +261,7 @@ enum Rank: Int {
 let  ace = Rank.Ace
 let aceRawValue = ace.rawValue
 
-func compareNumber(number1:Rank,number2:Rank) -> String {
+func compareNumber(_ number1:Rank,number2:Rank) -> String {
     if number1.rawValue > number2.rawValue {
         return "number1" + String(number1.rawValue)
     }else{
@@ -391,7 +391,7 @@ let protocolValue: ExampleProtocol = a
 print(protocolValue.simpleDescription)
 //print(protocolValue.anotherProperty)
 
-func repeatltem<Item>(item:Item,numberOfTimes:Int) -> [Item] {
+func repeatltem<Item>(_ item:Item,numberOfTimes:Int) -> [Item] {
     var result = [Item]()
     for _ in 0..<numberOfTimes {
         result.append(item)
@@ -408,7 +408,7 @@ enum OptionaValue<Wrapped> {
 var possibleInteger:OptionaValue<Int> = .None
 possibleInteger = .Some(100)
 
-func anyCommonElements<T:SequenceType,U:SequenceType where T.Generator.Element:Equatable,T.Generator.Element == U.Generator.Element>(Ihs:T,_rhs:U) -> Bool {
+func anyCommonElements<T:Sequence,U:Sequence>(_ Ihs:T,_rhs:U) -> Bool where T.Iterator.Element:Equatable,T.Iterator.Element == U.Iterator.Element {
     for IhsItem in Ihs {
         for rhsItem in _rhs {
             if IhsItem == rhsItem {

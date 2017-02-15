@@ -68,7 +68,7 @@ class LinearCongruentialGenerator: RandomNumberGenerator {
     let a = 3877.0
     let c = 29573.0
     func random() -> Double {
-        lastRandom = ((lastRandom * a + c) % m)
+        lastRandom = ((lastRandom * a + c).truncatingRemainder(dividingBy: m))
         return lastRandom / m
     }
 }
@@ -168,7 +168,7 @@ class SnakesAndLadders: DiceGame {
     var square = 0
     var board: [Int]
     init() {
-        board = [Int](count: finalSquare + 1, repeatedValue:0)
+        board = [Int](repeating: 0, count: finalSquare + 1)
         board[03] = +8 ; board[06] = +11; board[09] = +09; board[10] = +02
         board[14] = -10; board[19] = -11; board[22] = -2; board[24] = -8
     }
@@ -176,10 +176,10 @@ class SnakesAndLadders: DiceGame {
     var delegate: DiceGameDelegate?
     func play() {
         square = 0
-        delegate?.gameDidStart(self)
+        delegate?.gameDidStart(game: self)
         gameLoop: while square != finalSquare {
             let diceRoll = dice.roll()
-            delegate?.game(self, didStartNewTurnWithDiceRoll: diceRoll)
+            delegate?.game(game: self, didStartNewTurnWithDiceRoll: diceRoll)
             switch square + diceRoll {
             case finalSquare:
                 break gameLoop
@@ -190,7 +190,7 @@ class SnakesAndLadders: DiceGame {
                 square += board[square]
             }
         }
-        delegate?.gameDidEnd(self)
+        delegate?.gameDidEnd(game: self)
     }
 }
 
@@ -302,11 +302,11 @@ struct Person2: Named, Aged {
     var name: String
     var age: Int
 }
-func wishHappyBirthday(celebrator: protocol<Named,Aged>) {
+func wishHappyBirthday(celebrator: Named&Aged) {
     print("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
 }
 let birthdayPerson = Person2(name: "Malcolm", age: 21)
-wishHappyBirthday(birthdayPerson)
+wishHappyBirthday(celebrator: birthdayPerson)
 
 //检查协议一致性（Checking for Protocol Conformance）
     //你可以使用类型转换中描述的 is 和 as 操作符来检查协议一致性，即是否符合某协议，并且可以转换到指定的协议类型。检查和转换到某个协议类型在语法上和类型的检查和转换完全相同：
@@ -354,15 +354,15 @@ for object in objects {
 
 //可选的协议要求（Optional Protocol Requirements）
 @objc protocol CounterDataSource {
-    optional func incrementForCount(count: Int) -> Int
-    optional var fixedIncrement: Int { get }
+    @objc optional func incrementForCount(count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
 }
 
 class Counter {
     var count = 0
     var dataSource: CounterDataSource?
     func increment() {
-        if let amount = dataSource?.incrementForCount?(count) {
+        if let amount = dataSource?.incrementForCount?(count: count) {
             count += amount
         }else if let amount = dataSource?.fixedIncrement {
             count += amount
@@ -417,10 +417,10 @@ extension PrettyTextRepresentable {
 }
 
     //为协议扩展添加限制条件
-extension CollectionType where Generator.Element: TextRepresentable {
+extension Collection where Iterator.Element: TextRepresentable {
     var textualDescription: String {
         let itemsAsText = self.map{ $0.textualDescription }
-        return "[" + itemsAsText.joinWithSeparator(",") + "]"
+        return "[" + itemsAsText.joined(separator: ",") + "]"
     }
 }
 
